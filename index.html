@@ -1,277 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhrubajyoti Chattopadhyay's protfolio</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-       
-        /* Full-page layout */
-        html, body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: url("DSC.jpg") no-repeat center/cover;
-            color: white;
-            text-align: justify;
-            transition: background 0.5s ease-in-out;
-        }
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('DSC.jpg');
+  min-height: 100%;
+}
 
-        /* Main content area */
-        .content-wrapper {
-            flex: 1; /* Pushes footer to the bottom */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: justify;
-        }
-
-        .container {
-            max-width: 1980px;
-            background: rgba(0, 0, 10, 0.5);
-            padding: 30px;
-            border-radius: 20px;
-            width: 90%;
-            transition: opacity 1s;
-        }
-
-        .profile img {
+header img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             margin-bottom: 10px;
         }
+</style>
 
-        nav {
-            margin: 20px 0;
-        }
+<body>
 
-        nav a {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: white;
-            background: teal;
-            border-radius: 20px;
-            transition: background 0.3s;
-            cursor: pointer;
-        }
+<!-- Image Sidebar -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
 
-        nav a:hover {
-            background: lightseagreen;
-        }
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#expertise" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Expertise</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#honors" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Honors</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
 
-        .content {
-            display: none;
-        }
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
 
-        .active {
-            display: block;
-   font-size: 1.2em;
-   color: rgba(200, 200, 0, 1.0);
-        }
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
 
-        .article {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            border-bottom: 1px solid white;
-        }
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <img src="https://i1.rgstatic.net/ii/profile.image/312401319137281-1451493686219_Q128/Dhrubajyoti-Chattopadhyay-2.jpg" alt="Profile Picture">
+    <h1 class="w3-jumbo"><b>Mr. Dhrubajyoti Chattopadhyay</b></h1>
+    <p>District Science Officer</p>
+    <p>District Science Centre, Purulia, India 723101</p>
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+  </header>
 
-        .view-btn {
-            background: teal;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>About</h2>
+    <hr class="w3-opacity">
+    <p>I am Working under the National Council of Science Museums was posted at North Bengal Science Centre, Siliguri as a Project Coordinator. At present working as District Science Officer at District Science Centre Purulia. Interested in Science article writing and popularization of science through the various activity-based programmes. Have a few hundred papers in my credit and published in Bengali, English, Hindi, Asamia and Telegu.</p>
+    
+    <h2 class="w3-padding-16" id="expertise">Expertise</h2>
+    <hr class="w3-opacity">
 
-        .view-btn:hover {
-            background: lightseagreen;
-        }
-
-        /* Sticky footer */
-        footer {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            text-align: center;
-            width: 100%;
-            position: center;
-        }
-    </style>
-</head>
-<body id="pageBackground">
-
-    <div class="content-wrapper">
-        <div class="container">
-            <div class="profile">
-                <img src="https://i1.rgstatic.net/ii/profile.image/312401319137281-1451493686219_Q128/Dhrubajyoti-Chattopadhyay-2.jpg" alt="Profile Picture">
-                <h1>Mr. Dhrubajyoti Chattopadhyay
-</h1>
-                <p><strong>District Science Officer</strong> | District Science Centre, Purulia, India 723101</p>
-            </div>
-
-            <nav>
-                <a href="#" onclick="showSection('home', 'https://source.unsplash.com/1600x900/?books,library')">WELCOME</a>
-                <a href="#" onclick="showSection('expertise', 'https://source.unsplash.com/1600x900/?writing,study')">EXPERTISE</a>
-                <a href="#" onclick="showSection('experience', 'https://source.unsplash.com/1600x900/?desk,office')">ARTICLE</a>
-                <a href="#" onclick="showSection('work', 'https://source.unsplash.com/1600x900/?research,scholar')">WORK</a>
-                <a href="#" onclick="showSection('honors', 'https://source.unsplash.com/1600x900/?trophy,award')">HONORS</a>
-                <a href="#" onclick="showSection('cv', 'https://source.unsplash.com/1600x900/?resume,documents')">CV</a>
-                <a href="#" onclick="showSection('connect', 'https://source.unsplash.com/1600x900/?contact,email')">CONTACT</a>
-            </nav>
-
-            <div id="home" class="content active">
-                <blockquote><em>
-                    "Working under the National Council of Science Museums was posted at North Bengal Science Centre, Siliguri as a Project Coordinator. At present working as District Science  Officer at District Science Centre Purulia. Interested in Science article writing and popularization of science through the various activity-based programmes. Have a few hundred papers in my credit and published in Bengali, English,  Hindi, Asamia and Telegu." </em>
-                </blockquote>
-            </div>
-
-            <div id="expertise" class="content">
-                <h2>Expertise</h2>
-                <p>My areas of study include genre fiction, disability studies, folklore & mythology, popular culture, and new media.</p>
-            </div>
-
-            <div id="experience" class="content">
-                <h2>Experience</h2>
-                <div class="article">
-                    <span>📖 Article 1: 100th Death Anniversary of Jadav Chandra An unsung Indian Mathematician</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/57177/1/SR%2058%285%29%2038-39.pdf')">View</button>
-                </div>
-                <div class="article">
-                    <span>📖 Article 2: 150th Birth Anniversary of Khan Bahadur Qazi Azizul Haque Pioneer in Fingerprint Technology</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/60131/1/SR%2059%288%29%2046-47.pdf')">View</button>
-                </div>
-                <div class="article">
-                    <span>📖 Article 3: Asima Chatterjee – First Woman DSc of India</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/42878/1/SR%2054%2810%29%2048-50.pdf')">View</button>
-                </div>
-
- <div class="article">
-                    <span>📖 Article 4: The Centennial of a Quantum Leap</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/64303/1/SR%2061%2808%29%2027-29.pdf')">View</button>
-                </div>
- <div class="article">
-                    <span>📖 Article 5: Clara Immerwahr—Unsung Heroine of Science</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/33647/1/SR%2053%281%29%2038-40.pdf')">View</button>
-                </div>
- <div class="article">
-                    <span>📖 Article 6: Einstein’s Refrigerator</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/30357/1/SR%2052%281%29%2028-29.pdf')">View</button>
-                </div>
- <div class="article">
-                    <span>📖 Article 7: Hiralal Chaudhuri – Father of Blue Revolution in India</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/59961/1/SR%2059%287%29%2046-47.pdf')">View</button>
-                </div>
- <div class="article">
-                    <span>📖 Article 8: New Members of the Periodic Table Are Here!</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/33845/1/SR%2053%283%29%2028-29.pdf')">View</button>
-                </div>
- <div class="article">
-                    <span>📖 Article 9: Samar Kumar Bagchi Trailblazer in Science Popularisation Passes Away</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/62468/1/SR%2060%2809%29%2038-40.pdf')">View</button>
-                </div>
- <div class="article">
-                    <span>📖 Article 10: From Street to Space</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscpr.res.in/bitstream/123456789/36712/1/SR%2053%2811%29%2029-32.pdf')">View</button>
-                </div>
- <div class="article">
-                    <span>📖 Article 11: Anandibai Joshi – First Indian Woman Doctor</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscair.res.in/bitstream/123456789/31540/1/SR%2052%285%29%2034-36.pdf')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 12:The Unsung Indian Behind Ronald Ross’s Success</span>
-                    <button class="view-btn" onclick="openArticle('https://nopr.niscair.res.in/bitstream/123456789/33139/1/SR%2052%2811%29%2046-48.pdf')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 13:Dr Subhas Mukhopadhyay: Galileo of India</span>
-                    <button class="view-btn" onclick="openArticle('https://www.academia.edu/17508581/Dr_Subhas_Mukhopadhyay_Galileo_of_India')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 14:Cisplatin: Forty Years of a Serendipitous Discovery for Cancer</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/027/04/0659-0666')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 15:Didaktikogenic Misconception in Physics: An Example</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/021/04/0381-0386')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 16:Endangered Elements of the Periodic Table</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/022/01/0079-0087')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 17:Antibacterial Consumer Products: How Reliable Are They?</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/022/08/0761-0767')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 18:The Great Conjunction of 2020: A Rare Cosmic Gift</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/028/05/0771-0778')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 18:The Great Conjunction of 2020: A Rare Cosmic Gift</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/028/05/0771-0778')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 18:The Great Conjunction of 2020: A Rare Cosmic Gift</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/028/05/0771-0778')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 18:The Great Conjunction of 2020: A Rare Cosmic Gift</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/028/05/0771-0778')">View</button>
-                </div>
-<div class="article">
-                    <span>📖 Article 18:The Great Conjunction of 2020: A Rare Cosmic Gift</span>
-                    <button class="view-btn" onclick="openArticle('https://www.ias.ac.in/article/fulltext/reso/028/05/0771-0778')">View</button>
-                </div>
-            </div>
-
-            <div id="work" class="content">
-                <h2>Work</h2>
-                <p>This page will feature my academic and research work.</p>
-            </div>
-
-            <div id="honors" class="content">
-                <h2>Honors</h2>
-                <p>Awarded various accolades for research excellence and contributions to folklore studies.</p>
-            </div>
-
-            <div id="cv" class="content">
-                <h2>Curriculum Vitae</h2>
-                <p><a href="cv.pdf" target="_blank">Download my CV (PDF)</a></p>
-            </div>
-
-            <div id="connect" class="content">
-                <h2>Contact Me</h2>
-                <p>Mobile: <br>Email: dckc.sc@gmail.com</p>
-            </div>
-        </div>
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16 w3-section">
+      <div class="w3-quarter w3-section">
+        <p class="w3-xlarge">Genre Fiction</p>
+      </div>
+      <div class="w3-quarter w3-section">
+        <p class="w3-xlarge">Popular Culture</p>
+      </div>
+      <div class="w3-quarter w3-section">
+        <p class="w3-xlarge">Disability Studies</p>
+      </div>
+      <div class="w3-quarter w3-section">
+        <p class="w3-xlarge">Folklore & Mythology</p>
+      </div>
+      <div class="w3-quarter w3-section">
+        <p class="w3-xlarge">New Media</p>
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Mr. Dhrubajyoti Chattopadhyay. All rights reserved.</p>
-    </footer>
+    <!-- Testimonials -->
+    <h2 class="w3-padding-24" id="honors">Honors</h2>
+    <hr class="w3-opacity">
+    <p class="w3-large w3-text-grey w3-margin-right">Awarded various accolades for research excellence and contributions to folklore studies.</span></p>
+    
+    
+  <!-- End About Section -->
+  </div>
 
-    <script>
-        function showSection(sectionId, bgImage) {
-            // Hide all sections
-            document.querySelectorAll('.content').forEach(section => {
-                section.classList.remove('active');
-            });
+  <!-- Contact Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="contact">
+  <h2>Contact Me</h2>
+<hr class="w3-opacity">
+<form id="contactForm">
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" name="Name" required></p>
+    <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" name="Email" required></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" name="Subject" required></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" name="Message" required></p>
+    <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+    </p>
+    <div id="formStatus" style="margin-top:10px; font-weight:bold;"></div>
+</form>
 
-            // Show the selected section
-            document.getElementById(sectionId).classList.add('active');
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="#" target="_blank" class="w3-hover-text-green">Innovation Hub</a></p>
+    <p>&copy; 2025 Mr. Dhrubajyoti Chattopadhyay. All rights reserved.</p>
+  <!-- End footer -->
+  </footer>
+  
+<!-- END PAGE CONTENT -->
+</div>
 
-            // Change background image dynamically
-            document.body.style.background = `url('${bgImage}') no-repeat center/cover`;
-        }
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
 
-        function openArticle(file) {
-            window.open(file, '_blank'); // Opens file in a new tab
-        }
-    </script>
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+    const statusDiv = document.getElementById("formStatus");
+
+    fetch("https://script.google.com/macros/s/AKfycbxbvfCJVLcc8qT7Jtm5Mjwb1ZjHFND2oKsFSYesVAIWA24hwban23AP39ERELz6prQpew/exec", { // replace with your /exec URL
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        statusDiv.style.color = "green";
+        statusDiv.textContent = "✅ Message sent successfully!";
+        form.reset();
+    })
+    .catch(error => {
+        statusDiv.style.color = "red";
+        statusDiv.textContent = "❌ Error sending message. Please try again.";
+        console.error(error);
+    });
+});
+</script>
 
 </body>
 </html>
