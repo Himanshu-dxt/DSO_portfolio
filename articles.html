@@ -15,7 +15,6 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     color: #333;
-    line-height: 1.6;
     position: relative;
   }
 
@@ -71,24 +70,6 @@
     filter: brightness(0.6);
   }
 
-  /* Article header */
-  .article-header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .article-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #1a5276;
-  }
-
-  .article-meta {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 30px;
-  }
-
   /* Increase the font size of the heading */
   .header h1 {
     font-size: 40px;
@@ -134,55 +115,135 @@
     color: white;
   }
 
-  /* Article content container */
-  .article-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
+  /* Main content container */
+  .main-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
 
-  /* Article content styling */
-  .article-content {
-    font-size: 1.1rem;
-    line-height: 1.8;
+  /* Search bar styling */
+  .search-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(241, 241, 241, 0.9);
+    border-radius: 8px;
   }
 
-  .article-content p {
-    margin-bottom: 1.5rem;
+  .search-bar {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
-  .article-content h2 {
-    color: #1a5276;
-    margin-top: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+  .search-bar input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
   }
 
-  .article-content h3 {
-    color: #2874a6;
-    margin-top: 2rem;
-    margin-bottom: 1.2rem;
-    font-size: 1.4rem;
+  .search-bar button {
+    padding: 12px 20px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
 
-  .article-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 2rem auto;
+  .search-bar button:hover {
+    background-color: #16a085;
+  }
+
+  /* Article cards container */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+  }
+
+  /* Article card styling */
+  .article-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .article-thumbnail {
+    height: 180px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .article-thumbnail::after {
+    content: "PDF";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 3px 8px;
     border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    font-weight: bold;
   }
 
-  .article-content blockquote {
-    border-left: 4px solid #1abc9c;
-    padding-left: 20px;
-    margin: 2rem 0;
-    font-style: italic;
-    color: #555;
+  .article-info {
+    padding: 15px;
+  }
+
+  .article-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #1a5276;
+  }
+
+  .article-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+  }
+
+  .article-description {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .article-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+
+  .article-link:hover {
+    background-color: #16a085;
   }
 
   /* Footer */
@@ -205,36 +266,19 @@
     transform: translateY(-3px);
   }
 
-  /* Back to articles button */
-  .back-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #1abc9c;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    transition: all 0.3s ease;
-  }
-
-  .back-button:hover {
-    background-color: #16a085;
-    transform: translateY(-2px);
-  }
-
   /* Responsive layout */
   @media screen and (max-width: 700px) {
     .header {
       padding: 40px 20px;
     }
     
-    .article-container {
+    .main-container {
       margin: 20px 15px;
-      padding: 20px;
+      padding: 15px;
     }
     
-    .article-header h1 {
-      font-size: 1.8rem;
+    .articles-grid {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -325,79 +369,18 @@
   <div class="close-icon" id="closeIcon">×</div>
 </div>
 
-<div class="article-container">
-  <a href="index.html" class="back-button"><i class="fa fa-arrow-left"></i> Home </a>
+<div class="main-container">
+  <h2 style="text-align: center; margin-bottom: 20px;">My Published Articles</h2>
   
-  <div class="article-header">
-    <h1>Innovative Approaches to Science Education in Rural India</h1>
-    <div class="article-meta">
-      Published on: June 15, 2023 | Category: Science Education
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search articles...">
+      <button onclick="searchArticles()"><i class="fa fa-search"></i> Search</button>
     </div>
   </div>
   
-  <div class="article-content">
-    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" alt="Science Education in Rural India">
-    
-    <p>Science education in rural India faces unique challenges that require innovative solutions. Having worked extensively in rural areas through the District Science Centre, I've witnessed both the obstacles and the tremendous potential for improvement in science learning.</p>
-    
-    <h2>The Current Landscape</h2>
-    
-    <p>Rural schools often struggle with limited resources, including:</p>
-    <ul>
-      <li>Shortage of qualified science teachers</li>
-      <li>Lack of proper laboratory facilities</li>
-      <li>Limited access to updated learning materials</li>
-      <li>Cultural barriers to science education</li>
-    </ul>
-    
-    <p>Despite these challenges, rural students demonstrate remarkable curiosity and enthusiasm when given the right opportunities.</p>
-    
-    <h2>Successful Models We've Implemented</h2>
-    
-    <h3>1. Mobile Science Labs</h3>
-    <p>Our mobile lab program brings hands-on experiments to remote schools. Each van is equipped with:</p>
-    <ul>
-      <li>Basic chemistry and physics experiment kits</li>
-      <li>Microscopes and specimen slides</li>
-      <li>Interactive models of scientific concepts</li>
-    </ul>
-    
-    <blockquote>
-      "When students see science in action, it transforms from abstract concepts to tangible reality." - Teacher from Purulia district
-    </blockquote>
-    
-    <h3>2. Community Science Centers</h3>
-    <p>We've established small science centers in village community spaces that feature:</p>
-    <ul>
-      <li>Interactive exhibits made from local materials</li>
-      <li>Evening science clubs for all ages</li>
-      <li>Regular demonstration sessions</li>
-    </ul>
-    
-    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" alt="Community Science Center">
-    
-    <h2>Key Learnings</h2>
-    
-    <p>Through these initiatives, we've identified several principles for effective rural science education:</p>
-    
-    <ol>
-      <li><strong>Local relevance</strong> - Connect science concepts to students' daily lives and environment</li>
-      <li><strong>Hands-on learning</strong> - Minimize lecture-based teaching in favor of experimentation</li>
-      <li><strong>Community involvement</strong> - Engage parents and local leaders in supporting science education</li>
-      <li><strong>Low-cost solutions</strong> - Develop experiments using readily available materials</li>
-    </ol>
-    
-    <h2>The Road Ahead</h2>
-    
-    <p>Our future plans include:</p>
-    <ul>
-      <li>Expanding the mobile lab program to cover more schools</li>
-      <li>Developing vernacular science content in Bengali and other regional languages</li>
-      <li>Training local teachers in innovative teaching methodologies</li>
-      <li>Creating a network of rural science educators for knowledge sharing</li>
-    </ul>
-    
-    <p>Science education has the power to transform rural communities. By making science accessible, relevant, and engaging, we can nurture the next generation of problem-solvers and innovators who will drive India's scientific progress.</p>
+  <div class="articles-grid" id="articlesGrid">
+    <!-- Article cards will be inserted here by JavaScript -->
   </div>
 </div>
 
@@ -412,8 +395,105 @@
 </div>
 
 <script>
-// Set current year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+// Sample article data (replace with your actual articles)
+const articles = [
+  {
+    title: "Innovative Approaches to Science Education in Rural India",
+    description: "Exploring effective methods for teaching science in rural schools with limited resources.",
+    thumbnail: "https://images.unsplash.com/photo-1581094794329-c8112a89af12",
+    pdf: "articles/science-education-rural-india.pdf",
+    date: "June 2023",
+    category: "Science Education"
+  },
+  {
+    title: "Bridging Traditional Knowledge and Modern Science",
+    description: "How indigenous knowledge systems can complement modern scientific approaches.",
+    thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+    pdf: "articles/traditional-knowledge-science.pdf",
+    date: "March 2023",
+    category: "Science Communication"
+  },
+  {
+    title: "Multilingual Science Communication in India",
+    description: "The importance and challenges of communicating science in regional languages.",
+    thumbnail: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
+    pdf: "articles/multilingual-science-communication.pdf",
+    date: "January 2023",
+    category: "Science Communication"
+  },
+  {
+    title: "Low-Cost Science Experiments for Schools",
+    description: "Creative experiments using everyday materials to demonstrate scientific principles.",
+    thumbnail: "https://images.unsplash.com/photo-1505503693641-1926193e8d57",
+    pdf: "articles/low-cost-experiments.pdf",
+    date: "November 2022",
+    category: "Science Education"
+  },
+  {
+    title: "The Role of Science Centers in Public Education",
+    description: "How science centers can enhance formal education and public understanding of science.",
+    thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
+    pdf: "articles/science-centers-education.pdf",
+    date: "September 2022",
+    category: "Science Outreach"
+  },
+  {
+    title: "Climate Change Communication in Regional Media",
+    description: "Analyzing the coverage of climate science in Bengali and other regional newspapers.",
+    thumbnail: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
+    pdf: "articles/climate-change-media.pdf",
+    date: "July 2022",
+    category: "Science Communication"
+  }
+];
+
+// Display all articles
+function displayArticles(articlesToShow) {
+  const grid = document.getElementById('articlesGrid');
+  grid.innerHTML = '';
+  
+  articlesToShow.forEach(article => {
+    const card = document.createElement('div');
+    card.className = 'article-card';
+    card.innerHTML = `
+      <div class="article-thumbnail" style="background-image: url('${article.thumbnail}')"></div>
+      <div class="article-info">
+        <div class="article-title">${article.title}</div>
+        <div class="article-meta">${article.date} | ${article.category}</div>
+        <div class="article-description">${article.description}</div>
+        <a href="${article.pdf}" class="article-link" target="_blank"><i class="fa fa-file-pdf-o"></i> Read Article</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// Search articles function
+function searchArticles() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  const filteredArticles = articles.filter(article => 
+    article.title.toLowerCase().includes(searchTerm) || 
+    article.description.toLowerCase().includes(searchTerm) ||
+    article.category.toLowerCase().includes(searchTerm)
+  );
+  displayArticles(filteredArticles);
+}
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Display all articles initially
+  displayArticles(articles);
+  
+  // Search when Enter key is pressed
+  document.getElementById('searchInput').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      searchArticles();
+    }
+  });
+});
 
 // Navbar scroll function
 window.onscroll = function() {scrollFunction()};
