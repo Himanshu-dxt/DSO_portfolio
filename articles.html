@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Articles - Mr. Dhrubajyoti Chattopadhyay</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Style the body with background image */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* Background image with overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('science.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) blur(2px);
+    z-index: -2;
+  }
+
+  /* Semi-transparent overlay for better readability */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+  }
+
+  /* Header/logo Title */
+  .header {
+    padding: 60px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('DSC.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.6);
+  }
+
+  /* Article header */
+  .article-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .article-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1a5276;
+  }
+
+  .article-meta {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+
+  /* Increase the font size of the heading */
+  .header h1 {
+    font-size: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Sticky navbar */
+  .navbar {
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0.95);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right;
+  }
+
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: rgba(221, 221, 221, 0.8);
+    color: black;
+  }
+
+  /* Active/current link */
+  .navbar a.active {
+    background-color: rgba(102, 102, 102, 0.8);
+    color: white;
+  }
+
+  /* Article content container */
+  .article-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Article content styling */
+  .article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .article-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-content h2 {
+    color: #1a5276;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .article-content h3 {
+    color: #2874a6;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .article-content blockquote {
+    border-left: 4px solid #1abc9c;
+    padding-left: 20px;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #555;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(221, 221, 221, 0.9);
+    margin-top: 50px;
+  }
+
+  .social-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+    opacity: 0.7;
+    transform: translateY(-3px);
+  }
+
+  /* Back to articles button */
+  .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive layout */
+  @media screen and (max-width: 700px) {
+    .header {
+      padding: 40px 20px;
+    }
+    
+    .article-container {
+      margin: 20px 15px;
+      padding: 20px;
+    }
+    
+    .article-header h1 {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* Menu icon styles */
+  .menu-icon {
+    display: none;
+    float: right;
+    padding: 14px 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* Scrolled state for navbar */
+  .navbar.scrolled {
+    padding: 0;
+  }
+
+  .navbar.scrolled .menu-links {
+    display: none;
+  }
+
+  .navbar.scrolled .menu-icon {
+    display: block;
+  }
+
+  /* Show menu links when menu is open */
+  .navbar.scrolled.show-menu .menu-links {
+    display: block;
+    width: 100%;
+  }
+
+  .navbar.scrolled.show-menu a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Close icon style - initially hidden */
+  .close-icon {
+    display: none;
+    float: right;
+    padding: 14px 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Show close icon when menu is open */
+  .navbar.scrolled.show-menu .menu-icon {
+    display: none;
+  }
+
+  .navbar.scrolled.show-menu .close-icon {
+    display: block;
+  }  
+
+  .header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="https://i1.rgstatic.net/ii/profile.image/312401319137281-1451493686219_Q128/Dhrubajyoti-Chattopadhyay-2.jpg" alt="Profile Picture">
+  <h1>Mr. Dhrubajyoti Chattopadhyay</h1>
+  <p><b>District Science Officer | Science Communicator</b></p>
+</div>
+
+<div class="navbar" id="navbar">
+  <div class="menu-links">
+    <a href="index.html">Home</a>
+    <a href="articles.html" class="active">Articles</a>
+    <a href="work.html">Work</a>
+    <a href="contact.html" class="right">Contact</a>
+  </div>
+  <div class="menu-icon" id="menuIcon">☰</div>
+  <div class="close-icon" id="closeIcon">×</div>
+</div>
+
+<div class="article-container">
+  <a href="index.html" class="back-button"><i class="fa fa-arrow-left"></i> Home </a>
+  
+  <div class="article-header">
+    <h1>Innovative Approaches to Science Education in Rural India</h1>
+    <div class="article-meta">
+      Published on: June 15, 2023 | Category: Science Education
+    </div>
+  </div>
+  
+  <div class="article-content">
+    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" alt="Science Education in Rural India">
+    
+    <p>Science education in rural India faces unique challenges that require innovative solutions. Having worked extensively in rural areas through the District Science Centre, I've witnessed both the obstacles and the tremendous potential for improvement in science learning.</p>
+    
+    <h2>The Current Landscape</h2>
+    
+    <p>Rural schools often struggle with limited resources, including:</p>
+    <ul>
+      <li>Shortage of qualified science teachers</li>
+      <li>Lack of proper laboratory facilities</li>
+      <li>Limited access to updated learning materials</li>
+      <li>Cultural barriers to science education</li>
+    </ul>
+    
+    <p>Despite these challenges, rural students demonstrate remarkable curiosity and enthusiasm when given the right opportunities.</p>
+    
+    <h2>Successful Models We've Implemented</h2>
+    
+    <h3>1. Mobile Science Labs</h3>
+    <p>Our mobile lab program brings hands-on experiments to remote schools. Each van is equipped with:</p>
+    <ul>
+      <li>Basic chemistry and physics experiment kits</li>
+      <li>Microscopes and specimen slides</li>
+      <li>Interactive models of scientific concepts</li>
+    </ul>
+    
+    <blockquote>
+      "When students see science in action, it transforms from abstract concepts to tangible reality." - Teacher from Purulia district
+    </blockquote>
+    
+    <h3>2. Community Science Centers</h3>
+    <p>We've established small science centers in village community spaces that feature:</p>
+    <ul>
+      <li>Interactive exhibits made from local materials</li>
+      <li>Evening science clubs for all ages</li>
+      <li>Regular demonstration sessions</li>
+    </ul>
+    
+    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" alt="Community Science Center">
+    
+    <h2>Key Learnings</h2>
+    
+    <p>Through these initiatives, we've identified several principles for effective rural science education:</p>
+    
+    <ol>
+      <li><strong>Local relevance</strong> - Connect science concepts to students' daily lives and environment</li>
+      <li><strong>Hands-on learning</strong> - Minimize lecture-based teaching in favor of experimentation</li>
+      <li><strong>Community involvement</strong> - Engage parents and local leaders in supporting science education</li>
+      <li><strong>Low-cost solutions</strong> - Develop experiments using readily available materials</li>
+    </ol>
+    
+    <h2>The Road Ahead</h2>
+    
+    <p>Our future plans include:</p>
+    <ul>
+      <li>Expanding the mobile lab program to cover more schools</li>
+      <li>Developing vernacular science content in Bengali and other regional languages</li>
+      <li>Training local teachers in innovative teaching methodologies</li>
+      <li>Creating a network of rural science educators for knowledge sharing</li>
+    </ul>
+    
+    <p>Science education has the power to transform rural communities. By making science accessible, relevant, and engaging, we can nurture the next generation of problem-solvers and innovators who will drive India's scientific progress.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fa fa-facebook-official"></i></a>
+  <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+  <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fa fa-twitter"></i></a>
+  <a href="https://researchgate.net" target="_blank" class="social-icon"><i class="fa fa-graduation-cap"></i></a>
+  <p class="w3-medium">Powered by <a href="#" target="_blank" class="w3-hover-text-green">Innovation Hub</a></p>
+  <p>&copy; <span id="year"></span> Mr. Dhrubajyoti Chattopadhyay. All rights reserved.</p>
+</div>
+
+<script>
+// Set current year in footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Navbar scroll function
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  const navbar = document.getElementById("navbar");
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+    navbar.classList.remove("show-menu");
+  }
+}
+
+// Toggle menu when menu icon is clicked
+document.getElementById("menuIcon").addEventListener("click", function() {
+  const navbar = document.getElementById("navbar");
+  navbar.classList.add("show-menu");
+});
+
+// Close menu when close icon is clicked
+document.getElementById("closeIcon").addEventListener("click", function() {
+  const navbar = document.getElementById("navbar");
+  navbar.classList.remove("show-menu");
+});
+</script>
+
+</body>
+</html>
